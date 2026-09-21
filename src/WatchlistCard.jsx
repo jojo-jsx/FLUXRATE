@@ -2,7 +2,7 @@
 export default function WatchlistCard(props) {
 
   return (
-    <div className="Watchlist">
+    <div >
       <div>
         <img src={props.icon} alt={props.base} />
         <div>
