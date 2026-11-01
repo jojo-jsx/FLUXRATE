@@ -3,24 +3,17 @@ const toneClasses = {
   down: "text-fall",
   neutral: "text-ice",
 }
-
 function formatValue(value) {
-  let decimals
-
   if (value >= 1000) {
-    decimals = 2
-  } else if (value >= 1) {
-    decimals = 4
-  } else {
-    decimals = 6
+    return value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
   }
 
-  return value.toLocaleString(undefined, {
-    minimumFractionDigits: decimals,
-    maximumFractionDigits: decimals,
-  })
-}
+  if (value >= 1) {
+    return value.toLocaleString(undefined, { minimumFractionDigits: 4, maximumFractionDigits: 4 })
+  }
 
+  return value.toLocaleString(undefined, { minimumSignificantDigits: 4, maximumSignificantDigits: 4 })
+}
 export default function StatBox(props) {
   return (
     <div className="rounded-xl border border-white/5 bg-ink-900 px-3 py-2">

@@ -1,18 +1,16 @@
 import { useState } from "react"
-import { currencyData } from "./currencies"
 import CurrencyBox from "./CurrencyBox.jsx"
 import { ArrowLeftRight, Zap, Clock } from "lucide-react"
 
 const numberFormat = { maximumFractionDigits: 8 }
 
-export default function Converter({ fromCurrency, toCurrency, setFromCurrency, setToCurrency }) {
-    // const [fromCurrency, setFromCurrency] = useState("BTC")
-    // const [toCurrency, setToCurrency] = useState("USD")
+   export default function Converter({ currencies, fromCurrency, toCurrency, setFromCurrency, setToCurrency }) {
+
     const [openBox, setOpenBox] = useState(null)
     const [fromInput, setFromInput] = useState("0")
 
-    const fromData = currencyData.find((data) => data.currency === fromCurrency)
-    const toData = currencyData.find((data) => data.currency === toCurrency)
+    const fromData = currencies.find((data) => data.currency === fromCurrency)
+    const toData = currencies.find((data) => data.currency === toCurrency)
 
     function handleSwap() {
         const oldFromValue = fromCurrency

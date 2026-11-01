@@ -23,11 +23,10 @@ function dayLabel(index, total) {
   return date.toLocaleDateString(undefined, { month: "short", day: "numeric" })
 }
 
-export default function ChartSection({ fromCurrency, toCurrency }) {
-  const [range, setRange] = useState("7D")
+   export default function ChartSection({ currencies, fromCurrency, toCurrency }) {  const [range, setRange] = useState("7D")
 
-  const fromData = currencyData.find((data) => data.currency === fromCurrency)
-  const toData = currencyData.find((data) => data.currency === toCurrency)
+  const fromData = currencies.find((data) => data.currency === fromCurrency)
+  const toData = currencies.find((data) => data.currency === toCurrency)
 
   const points = range === "7D" ? 7 : 30
   const days = points
