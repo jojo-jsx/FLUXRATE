@@ -20,8 +20,7 @@ export default function Footer() {
           </span>
         </div>
 
-        <nav className="flex items-center gap-5 text-sm text-muted">
-          {footerLinks.map((link) => (
+        <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm text-muted">          {footerLinks.map((link) => (
             <a key={link.label} href={link.href} className="transition-colors hover:text-ice">
               {link.label}
             </a>
@@ -35,8 +34,7 @@ export default function Footer() {
 <Code className="h-4 w-4" /> View on GitHub          </a>
         </nav>
 
-        <p className="text-xs text-muted">Demo data for illustration — not financial advice.</p>
-      </div>
+        <p className="text-center text-xs text-muted">Demo data for illustration — not financial advice.</p>      </div>
     </footer>
   )
 }

@@ -1,5 +1,6 @@
 import { Star } from 'lucide-react';
 import { useState } from 'react';
+import Sparkline from './Sparkline';
 
 export default function WatchlistCard(props) {
 
@@ -35,8 +36,7 @@ export default function WatchlistCard(props) {
           </span>
         </div>
         <div className={`w-20 h-8 rounded ${ isPositive ? "bg-rise/10 text-rise" : "bg-fall/10 text-fall"}`}>
-          {/* sparkline chart goes here later */}
-        </div>
+<Sparkline values={props.sparkline} isPositive={isPositive} />        </div>
       </div>
     </div>
   );
